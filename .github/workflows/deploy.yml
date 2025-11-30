@@ -26,6 +26,13 @@ jobs:
           GH_PAGES_BASE: '/std_project_manage/'
         run: npm run build
 
+      - name: Show build summary (debug)
+        run: |
+          echo "Listing repo root files:"
+          ls -la
+          echo "Listing build dir:"
+          ls -la build || true
+
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
